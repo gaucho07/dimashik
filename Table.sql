@@ -1,4 +1,4 @@
--- Создание таблицы "Автомобили"
+
 CREATE TABLE Автомобили (
     ID_автомобиля SERIAL PRIMARY KEY,
     Марка VARCHAR(255),
@@ -11,7 +11,6 @@ CREATE TABLE Автомобили (
     Количество_в_наличии INTEGER
 );
 
--- Создание таблицы "Клиенты"
 CREATE TABLE Клиенты (
     ID_клиента SERIAL PRIMARY KEY,
     Имя VARCHAR(255),
@@ -23,7 +22,6 @@ CREATE TABLE Клиенты (
     Электронная_почта VARCHAR(255)
 );
 
--- Создание таблицы "Продажи"
 CREATE TABLE Продажи (
     ID_продажи SERIAL PRIMARY KEY,
     ID_клиента INTEGER REFERENCES Клиенты(ID_клиента),
@@ -33,7 +31,6 @@ CREATE TABLE Продажи (
     Сотрудник_продажи VARCHAR(255)
 );
 
--- Создание таблицы "Сотрудники"
 CREATE TABLE Сотрудники (
     ID_сотрудника SERIAL PRIMARY KEY,
     Имя VARCHAR(255),
@@ -46,7 +43,6 @@ CREATE TABLE Сотрудники (
     Дата_приема_на_работу DATE
 );
 
--- Создание таблицы "Заказы"
 CREATE TABLE Заказы (
     ID_заказа SERIAL PRIMARY KEY,
     ID_клиента INTEGER REFERENCES Клиенты(ID_клиента),
@@ -57,7 +53,6 @@ CREATE TABLE Заказы (
     Сотрудник_обработки_заказа VARCHAR(255)
 );
 
--- Создание таблицы "Сервисное_обслуживание"
 CREATE TABLE Сервисное_обслуживание (
     ID_записи SERIAL PRIMARY KEY,
     ID_автомобиля INTEGER REFERENCES Автомобили(ID_автомобиля),
